@@ -9,6 +9,8 @@ from utils.log import get_logger
 from utils.modify_settings import add_action, delete_action, add_event, link_action_to_event, unlink_action_to_event
 from utils.validators import CustomName
 
+from config import LOCAL_HOST
+
 app = typer.Typer()
 
 # configure logging
@@ -22,7 +24,7 @@ def start(
             help='Determines whether the GUI should be served at the root path, or behind a unique key.',
         ),
         host: str = typer.Option(
-            default='127.0.0.1'
+            default = LOCAL_HOST
         ),
         port: int = typer.Option(
             default=5000
