@@ -9,7 +9,7 @@ from utils.log import get_logger
 from utils.modify_settings import add_action, delete_action, add_event, link_action_to_event, unlink_action_to_event
 from utils.validators import CustomName
 
-from config import LOCAL_HOST
+from config import LOCAL_HOST, PORT
 
 app = typer.Typer()
 
@@ -27,7 +27,7 @@ def start(
             default = LOCAL_HOST
         ),
         port: int = typer.Option(
-            default=5000
+            default= PORT
         )
 ):
     def clear_gui_key():
