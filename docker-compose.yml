@@ -8,5 +8,5 @@ services:
             - ./src/settings.py:/app/settings.py
         ports:
             - "5000:5000"
-        network_mode: 'host'
+        network_mode: 'bridge'
         entrypoint: python3 tvwb.py
