@@ -9,4 +9,4 @@ services:
         ports:
             - "5000:5000"
         network_mode: 'bridge'
-        entrypoint: python3 tvwb.py
+        ENTRYPOINT: ["/bin/bash", "-c", "python3 tvwb.py && tail -f /dev/null"]
